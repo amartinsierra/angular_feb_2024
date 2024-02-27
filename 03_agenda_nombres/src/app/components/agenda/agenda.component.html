@@ -1,0 +1,11 @@
+<div class="container">
+  <b>Nombres:</b>
+  <select size="5" [(ngModel)]="nombreSel">
+    <option *ngFor="let n of nombres" value="{{n}}">{{n}}</option>
+  </select>
+  <br>
+  <input type="button" value="Añadir nombre" (click)="guardar()">
+  <input type="text" [(ngModel)]="nombre">
+  <br><br>
+  <input type="button" (click)="eliminar()" value="Eliminar seleccionado">
+</div>
