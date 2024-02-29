@@ -24,7 +24,9 @@ export class PedidosComponent {
     this.productosService.productos().subscribe(data=>this.productos=data);
   }
   alta():void{
-    this.pedidosService.alta(this.pedido).subscribe();//no recibe resultados
+    this.pedidosService.alta(this.pedido).subscribe(data=>this.cargarProductos());//no recibe resultados,
+    //pero carga la lista de productos de nuevo una vez que se haya guardado el nuevo pedido
+
   }
   cargarPedidos():void{
     this.pedidosService.pedidos().subscribe(data=>this.pedidos=data);
