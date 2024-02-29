@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Pedido } from '../../model/Pedido';
 import { Producto } from '../../model/Producto';
 import { ProductosService } from '../../service/productos.service';
@@ -9,16 +9,20 @@ import { PedidosService } from '../../service/pedidos.service';
   templateUrl: './pedidos.component.html',
   styleUrl: './pedidos.component.css'
 })
-export class PedidosComponent {
+export class PedidosComponent implements OnInit{
   pedido:Pedido;
   productos:Producto[];
   pedidos:Pedido[];
 
   constructor(private productosService:ProductosService,
               private pedidosService:PedidosService){
-              this.pedido=new Pedido();
-              this.cargarProductos();//para cargar productos desde el principio
-    }
+
+  }
+  //se ejecuta una vez que el componente está listo para su utilización
+  ngOnInit(): void {
+    this.pedido=new Pedido();
+    this.cargarProductos();//para cargar productos desde el principio
+  }
 
   cargarProductos():void{
     this.productosService.productos().subscribe(data=>this.productos=data);
