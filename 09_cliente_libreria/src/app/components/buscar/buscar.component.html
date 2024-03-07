@@ -1,0 +1,36 @@
+<div class="container">
+  <h1>Buscar libro</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6" style="border: solid 1px">
+        <div class="form-group">
+          <label>Isbn</label>
+          <input
+            type="text"
+            [(ngModel)]="isbn"
+            class="form-control"
+          />
+        </div>
+        <div>
+          <div class="form-group">
+            <label>Titulo: </label>
+            <label><b>{{libro.titulo}}</b></label>
+          </div>
+          <div class="form-group">
+            <label>Temática: </label>
+            <label><b>{{libro.tematica}}</b></label>
+          </div>
+        </div>
+        <br />
+      </div>
+    </div>
+    <br />
+    <div class="container">
+      <button (click)="buscar()">Buscar libro</button>
+    </div>
+
+  </div>
+</div>
+
+
+

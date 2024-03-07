@@ -1,0 +1,17 @@
+<div class="container">
+  <table class="table">
+    <thead>
+      <th>ISBN</th>
+      <th>Título</th>
+      <th>Temática</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let l of libros">
+        <td>{{l.isbn}}</td>
+        <td>{{l.titulo}}</td>
+        <td>{{l.tematica}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

@@ -1,0 +1,42 @@
+<div class="container">
+  <h1>Nuevo libro</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6" style="border: solid 1px">
+        <div class="form-group">
+          <label>Temática</label>
+          <select class="form-control" [(ngModel)]="libro.tematica">
+            <option *ngFor="let t of tematicas" value="{{ t }}">
+              {{ t }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Titulo</label>
+          <input
+            type="text"
+            [(ngModel)]="libro.titulo"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <label>Isbn</label>
+          <input
+            type="text"
+            [(ngModel)]="libro.isbn"
+            class="form-control"
+          />
+        </div>
+        <br />
+      </div>
+    </div>
+    <br />
+    <div class="container">
+      <button (click)="alta()">Grabar libro</button>
+    </div>
+
+  </div>
+</div>
+
+
